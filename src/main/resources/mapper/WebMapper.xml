@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.WebMapper">
+    <resultMap id="result" type="com.example.demo.entity.Websites">
+        <result column="id" jdbcType="INTEGER" property="id" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="url" jdbcType="VARCHAR" property="url" />
+        <result column="alexa" jdbcType="INTEGER" property="alexa" />
+        <result column="country" jdbcType="VARCHAR" property="country" />
+    </resultMap>
+
+    <select id="findAllWebsites" resultType="com.example.demo.entity.Websites">
+        select * from websites;
+    </select>
+
+    <select id="findWebsitesById" resultType="com.example.demo.entity.Websites">
+        select * from websites where id=#{id};
+    </select>
+</mapper>
